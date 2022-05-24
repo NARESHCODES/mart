@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mart/view/home.dart';
+// import 'package:mart/view/home.dart';
+import 'package:mart/view/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: const HomeView(),
+      home: const SplashView(),
     );
   }
 }

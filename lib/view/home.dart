@@ -41,14 +41,15 @@ class HomeView extends StatelessWidget {
               slide(sc: sc),
               //featured products
               const CustomListTile(
-                  title: "Featured Products", subtitle: "New Products for you"),
+                  title: "Featured Products", subtitle: "New Featured items"),
               //offers
               const CustomListTile(
-                  title: "Offers ", subtitle: "offers for you"),
+                  title: "Special Products",
+                  subtitle: "Today's Special Dishes"),
               //special products
               const CustomListTile(
-                  title: "Special products",
-                  subtitle: "Special products for you")
+                  title: "Today's Best Deals ",
+                  subtitle: "Best offers for Today")
             ],
           ));
         }

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mart/widgets/loader.dart';
 import '../controller/slide.dart';
 
 // ignore: camel_case_types
@@ -31,8 +32,7 @@ class slide extends StatelessWidget {
                   child: CachedNetworkImage(
                     imageUrl: i,
                     fit: BoxFit.cover,
-                    placeholder: (context, url) =>
-                        const Center(child: CircularProgressIndicator()),
+                    placeholder: (context, url) => const Loader(),
                     errorWidget: (context, url, error) =>
                         const Icon(Icons.error),
                   ),

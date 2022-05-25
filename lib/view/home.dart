@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:mart/controller/slide.dart';
 import 'package:mart/util/app_color.dart';
+import 'package:mart/widgets/custom_list_tile.dart';
 import 'package:mart/widgets/slide.dart';
 
 class HomeView extends StatelessWidget {
@@ -34,10 +35,17 @@ class HomeView extends StatelessWidget {
               child: Column(
             children: [
               //slides
-              slide(sc: sc)
+              slide(sc: sc),
               //featured products
+              const CustomListTile(
+                  title: "Featured Products", subtitle: "New Products for you"),
               //offers
+              const CustomListTile(
+                  title: "Offers ", subtitle: "offers for you"),
               //special products
+              const CustomListTile(
+                  title: "Special products",
+                  subtitle: "Special products for you")
             ],
           ));
         }

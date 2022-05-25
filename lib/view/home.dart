@@ -1,15 +1,15 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
-import 'package:carousel_slider/carousel_slider.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
+import 'package:mart/controller/slide.dart';
 import 'package:mart/util/app_color.dart';
+import 'package:mart/widgets/slide.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var sc = Get.find<SlideController>();
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -26,36 +26,22 @@ class HomeView extends StatelessWidget {
           )
         ],
       ),
-      body: SingleChildScrollView(
-          child: Column(
-        children: [
-          //slides
-          SizedBox(
-            height: 250,
-            width: Get.size.width,
-            child: CarouselSlider(
-              options: CarouselOptions(height: 400.0),
-              items: [1, 2, 3, 4, 5].map((i) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 5.0),
-                        decoration: BoxDecoration(color: Colors.amber),
-                        child: Text(
-                          'text $i',
-                          style: TextStyle(fontSize: 16.0),
-                        ));
-                  },
-                );
-              }).toList(),
-            ),
-          )
-          //featured products
-          //offers
-          //special products
-        ],
-      )),
+      body: Obx(() {
+        if (sc.isloading.value == true) {
+          return const Center(child: CircularProgressIndicator());
+        } else {
+          return SingleChildScrollView(
+              child: Column(
+            children: [
+              //slides
+              slide(sc: sc)
+              //featured products
+              //offers
+              //special products
+            ],
+          ));
+        }
+      }),
     ));
   }
 }

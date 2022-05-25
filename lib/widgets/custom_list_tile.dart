@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mart/util/app_color.dart';
 
 class CustomListTile extends StatelessWidget {
   final String title;
@@ -14,7 +15,15 @@ class CustomListTile extends StatelessWidget {
     return ListTile(
       title: Text(title),
       subtitle: Text(subtitle),
-      trailing: ElevatedButton(onPressed: () {}, child: const Text("SEE ALL")),
+      trailing: ElevatedButton(
+          style: ButtonStyle(
+              backgroundColor:
+                  MaterialStateProperty.all(AppColor.primaryColor)),
+          onPressed: () {},
+          child: const Text(
+            "SEE ALL",
+            style: TextStyle(color: Colors.white),
+          )),
     );
   }
 }

@@ -14,7 +14,10 @@ class HomeView extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("Mart")),
+        titleTextStyle: const TextStyle(fontSize: 30, color: Colors.black),
+        title: Container(
+            margin: const EdgeInsets.only(left: 45.0),
+            child: const Center(child: Text("Mart"))),
         actions: [
           Stack(
             children: [

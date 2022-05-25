@@ -11,7 +11,7 @@ class Loader extends StatelessWidget {
     return Center(
       child: LoadingAnimationWidget.stretchedDots(
         color: Colors.white,
-        size: 200,
+        size: 100,
       ),
     );
   }

@@ -25,10 +25,9 @@ class slide extends StatelessWidget {
           items: sc.slides.map((i) {
             return Builder(
               builder: (BuildContext context) {
-                return Container(
+                return SizedBox(
                   width: Get.size.width,
                   height: 250,
-                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
                   child: CachedNetworkImage(
                     imageUrl: i,
                     fit: BoxFit.cover,

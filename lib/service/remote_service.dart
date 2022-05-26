@@ -3,6 +3,7 @@
 import "package:get/get.dart";
 import "package:http/http.dart" as http;
 import 'package:mart/model/best_deal.dart';
+import 'package:mart/model/featured_product.dart';
 import "package:mart/model/slide.dart";
 
 class RemoteService {
@@ -30,6 +31,21 @@ class RemoteService {
       if (response.statusCode == 200) {
         var jsonString = response.body;
         return bestDealModelFromJson(jsonString);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      Get.snackbar("Error", e.toString());
+    }
+  }
+
+  //featured products
+  static Future<List<FeaturedProductModel>?> fetchfeaturedProducts() async {
+    try {
+      var response = await client.get(Uri.parse("$baseURL/featured"));
+      if (response.statusCode == 200) {
+        var jsonString = response.body;
+        return featuredProductModelFromJson(jsonString);
       } else {
         return null;
       }

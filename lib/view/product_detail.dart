@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:mart/controller/product_detail.dart';
-import 'package:mart/util/app_color.dart';
 import 'package:mart/widgets/loader.dart';
 
 class ProductDetailView extends StatelessWidget {
@@ -15,21 +14,10 @@ class ProductDetailView extends StatelessWidget {
         child: Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        titleTextStyle: const TextStyle(fontSize: 30, color: Colors.black),
+        titleTextStyle: const TextStyle(fontSize: 18, color: Colors.black),
         title: Container(
-            margin: const EdgeInsets.only(left: 40.0, right: 40.0),
-            child: const Center(child: Text("Product Details"))),
-        actions: [
-          Stack(
-            children: [
-              const Text("5"),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.shopping_cart),
-                  color: AppColor.iconColor)
-            ],
-          )
-        ],
+            margin: const EdgeInsets.only(left: 10.0, right: 60.0),
+            child: Center(child: Text(pdc.singleProduct.value.name))),
       ),
       body: Obx(() {
         if (pdc.isloading.value == true) {
@@ -40,7 +28,7 @@ class ProductDetailView extends StatelessWidget {
             children: [
               SizedBox(
                 width: Get.size.width,
-                height: 250,
+                height: 200,
                 child: CachedNetworkImage(
                   imageUrl: pdc.singleProduct.value.image,
                   fit: BoxFit.cover,

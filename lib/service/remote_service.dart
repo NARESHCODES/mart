@@ -15,7 +15,7 @@ class RemoteService {
       var response = await client.get(Uri.parse("$baseURL/slides"));
       if (response.statusCode == 200) {
         var jsonString = response.body;
-        return slideModelFromJson(jsonString);s
+        return slideModelFromJson(jsonString);
       } else {
         return null;
       }

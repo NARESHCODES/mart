@@ -111,7 +111,7 @@ class HomeView extends StatelessWidget {
                 height: 200,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: bc.bestDeals.length,
+                  itemCount: fc.featuredProducts.length,
                   itemBuilder: (BuildContext context, int index) {
                     return SizedBox(
                       width: 200,

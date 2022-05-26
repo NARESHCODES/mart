@@ -5,12 +5,18 @@ import 'package:mart/controller/product_detail.dart';
 import 'package:mart/widgets/loader.dart';
 import 'package:readmore/readmore.dart';
 
-class ProductDetailView extends StatelessWidget {
+class ProductDetailView extends StatefulWidget {
   const ProductDetailView({Key? key}) : super(key: key);
 
   @override
+  State<ProductDetailView> createState() => _ProductDetailViewState();
+}
+
+class _ProductDetailViewState extends State<ProductDetailView> {
+  @override
   Widget build(BuildContext context) {
     var pdc = Get.find<ProductDetailController>();
+    int qty = 1;
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -62,13 +68,50 @@ class ProductDetailView extends StatelessWidget {
                   ],
                 ),
               ),
+
+              //add to cart button
+              Row(
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        if (qty <= 1) {
+                          qty = 1;
+                        } else {
+                          qty++;
+                        }
+                        setState(() {});
+                      },
+                      icon: const Icon(
+                        Icons.remove_circle_outline,
+                        size: 24,
+                      )),
+                  Container(
+                      width: 40,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text("$qty")),
+                  IconButton(
+                      onPressed: () {
+                        qty++;
+                        setState(() {});
+                      },
+                      icon: const Icon(
+                        Icons.add_circle_outline,
+                        size: 24,
+                      )),
+                  ElevatedButton(
+                      onPressed: () {}, child: const Text("Add to cart"))
+                ],
+              ),
               //product description
               ListTile(
                 title: const Text("Description"),
                 subtitle: ReadMoreText(
                   style: const TextStyle(color: Colors.black),
                   pdc.singleProduct.value.description,
-                  trimLines: 10,
+                  trimLines: 5,
                   colorClickableText: Colors.pink,
                   trimMode: TrimMode.Line,
                   trimCollapsedText: 'Read more',

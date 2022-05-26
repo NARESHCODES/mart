@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:mart/controller/best_deal_controller.dart';
 import 'package:mart/controller/slide.dart';
 
 class ControllerBinding extends Bindings {
@@ -7,5 +8,6 @@ class ControllerBinding extends Bindings {
     // ignore: todo
     // TODO: implement dependencies
     Get.put(SlideController());
+    Get.put(BestDealController());
   }
 }

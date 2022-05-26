@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
+import 'package:mart/controller/best_deal_controller.dart';
 import 'package:mart/controller/slide.dart';
 import 'package:mart/util/app_color.dart';
 import 'package:mart/widgets/custom_list_tile.dart';
@@ -11,6 +12,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var sc = Get.find<SlideController>();
+    var bc = Get.find<BestDealController>();
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -43,6 +45,17 @@ class HomeView extends StatelessWidget {
               const CustomListTile(
                   title: "Today's Best Deals ",
                   subtitle: "Best offers for Today"),
+
+              SizedBox(
+                width: Get.size.width,
+                height: 200,
+                child: ListView.builder(
+                  itemCount: bc.bestDeals.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Text(bc.bestDeals[index].name);
+                  },
+                ),
+              ),
               //featured products
               const CustomListTile(
                   title: "Featured Products", subtitle: "New Featured items"),

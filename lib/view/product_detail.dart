@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:mart/controller/product_detail.dart';
 import 'package:mart/widgets/loader.dart';
+import 'package:readmore/readmore.dart';
 
 class ProductDetailView extends StatelessWidget {
   const ProductDetailView({Key? key}) : super(key: key);
@@ -17,7 +18,11 @@ class ProductDetailView extends StatelessWidget {
         titleTextStyle: const TextStyle(fontSize: 18, color: Colors.black),
         title: Container(
             margin: const EdgeInsets.only(left: 10.0, right: 60.0),
-            child: Center(child: Text(pdc.singleProduct.value.name))),
+            child: Center(
+                child: Text(
+              pdc.singleProduct.value.name,
+              style: const TextStyle(fontWeight: FontWeight.w600),
+            ))),
       ),
       body: Obx(() {
         if (pdc.isloading.value == true) {
@@ -34,6 +39,42 @@ class ProductDetailView extends StatelessWidget {
                   fit: BoxFit.cover,
                   placeholder: (context, url) => const Loader(),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  pdc.singleProduct.value.name,
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.w500),
+                ),
+                subtitle: Row(
+                  children: [
+                    pdc.singleProduct.value.discountPercent > 0
+                        ? Text("Rs.${pdc.singleProduct.value.price}",
+                            style: const TextStyle(
+                                color: Colors.red,
+                                decoration: TextDecoration.lineThrough))
+                        : const SizedBox(),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text("Rs.${pdc.singleProduct.value.sellingPrice}"),
+                  ],
+                ),
+              ),
+              //product description
+              ListTile(
+                title: const Text("Description"),
+                subtitle: ReadMoreText(
+                  style: const TextStyle(color: Colors.black),
+                  pdc.singleProduct.value.description,
+                  trimLines: 10,
+                  colorClickableText: Colors.pink,
+                  trimMode: TrimMode.Line,
+                  trimCollapsedText: 'Read more',
+                  trimExpandedText: 'Show less',
+                  moreStyle: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               )
             ],

@@ -59,7 +59,7 @@ class RemoteService {
   static Future<ProductDetailModel?> fetchsingleProductDetailById(
       int id) async {
     try {
-      var response = await client.get(Uri.parse("$baseURL/allProducts/$id"));
+      var response = await client.get(Uri.parse("$baseURL/bestProducts/$id"));
       if (response.statusCode == 200) {
         var jsonString = response.body;
         return productDetailModelFromJson(jsonString);

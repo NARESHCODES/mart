@@ -27,7 +27,7 @@ class RemoteService {
   //best deals products
   static Future<List<BestDealModel>?> fetchBestDeals() async {
     try {
-      var response = await client.get(Uri.parse("$baseURL/products"));
+      var response = await client.get(Uri.parse("$baseURL/bestproducts"));
       if (response.statusCode == 200) {
         var jsonString = response.body;
         return bestDealModelFromJson(jsonString);
@@ -42,7 +42,7 @@ class RemoteService {
   //featured products
   static Future<List<FeaturedProductModel>?> fetchfeaturedProducts() async {
     try {
-      var response = await client.get(Uri.parse("$baseURL/featured"));
+      var response = await client.get(Uri.parse("$baseURL/featuredProducts"));
       if (response.statusCode == 200) {
         var jsonString = response.body;
         return featuredProductModelFromJson(jsonString);

@@ -4,6 +4,7 @@ import "package:get/get.dart";
 import "package:http/http.dart" as http;
 import 'package:mart/model/best_deal.dart';
 import 'package:mart/model/featured_product.dart';
+import 'package:mart/model/product_detail.dart';
 import "package:mart/model/slide.dart";
 
 class RemoteService {
@@ -46,6 +47,22 @@ class RemoteService {
       if (response.statusCode == 200) {
         var jsonString = response.body;
         return featuredProductModelFromJson(jsonString);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      Get.snackbar("Error", e.toString());
+    }
+  }
+
+  //Single Product Detail by Id
+  static Future<ProductDetailModel?> fetchsingleProductDetailById(
+      int id) async {
+    try {
+      var response = await client.get(Uri.parse("$baseURL/allProducts/$id"));
+      if (response.statusCode == 200) {
+        var jsonString = response.body;
+        return productDetailModelFromJson(jsonString);
       } else {
         return null;
       }

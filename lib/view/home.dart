@@ -3,8 +3,10 @@ import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:mart/controller/best_deal_controller.dart';
 import 'package:mart/controller/featured_product_controller.dart';
+import 'package:mart/controller/product_detail.dart';
 import 'package:mart/controller/slide.dart';
 import 'package:mart/util/app_color.dart';
+import 'package:mart/view/product_detail.dart';
 import 'package:mart/widgets/custom_list_tile.dart';
 import 'package:mart/widgets/loader.dart';
 import 'package:mart/widgets/slide.dart';
@@ -17,6 +19,7 @@ class HomeView extends StatelessWidget {
     var sc = Get.find<SlideController>();
     var bc = Get.find<BestDealController>();
     var fc = Get.find<FeaturedProductController>();
+    var pdc = Get.find<ProductDetailController>();
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -59,44 +62,55 @@ class HomeView extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: bc.bestDeals.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return SizedBox(
-                      width: 200,
-                      child: Card(
-                          child: Column(
-                        children: [
-                          Expanded(
-                            child: CachedNetworkImage(
-                              imageUrl: bc.bestDeals[index].image,
-                              fit: BoxFit.cover,
-                              placeholder: (context, url) => const Loader(),
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
+                    return InkWell(
+                      onTap: () {
+                        pdc
+                            .getsingleProductDetailById(bc.bestDeals[index].id)
+                            .whenComplete(
+                                () => Get.to(() => const ProductDetailView()));
+                      },
+                      child: SizedBox(
+                        width: 200,
+                        child: Card(
+                            child: Column(
+                          children: [
+                            Expanded(
+                              child: SizedBox(
+                                width: 200,
+                                child: CachedNetworkImage(
+                                  imageUrl: bc.bestDeals[index].image,
+                                  fit: BoxFit.cover,
+                                  placeholder: (context, url) => const Loader(),
+                                  errorWidget: (context, url, error) =>
+                                      const Icon(Icons.error),
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(bc.bestDeals[index].name),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              bc.bestDeals[index].discountPercent > 0
-                                  ? Text("Rs.${bc.bestDeals[index].price}",
-                                      style: const TextStyle(
-                                          color: Colors.red,
-                                          decoration:
-                                              TextDecoration.lineThrough))
-                                  : const SizedBox(),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Text("Rs.${bc.bestDeals[index].sellingPrice}"),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                  "-(${bc.bestDeals[index].discountPercent}%)"),
-                            ],
-                          )
-                        ],
-                      )),
+                            Text(bc.bestDeals[index].name),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                bc.bestDeals[index].discountPercent > 0
+                                    ? Text("Rs.${bc.bestDeals[index].price}",
+                                        style: const TextStyle(
+                                            color: Colors.red,
+                                            decoration:
+                                                TextDecoration.lineThrough))
+                                    : const SizedBox(),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text("Rs.${bc.bestDeals[index].sellingPrice}"),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                    "-(${bc.bestDeals[index].discountPercent}%)"),
+                              ],
+                            )
+                          ],
+                        )),
+                      ),
                     );
                   },
                 ),
@@ -119,12 +133,15 @@ class HomeView extends StatelessWidget {
                           child: Column(
                         children: [
                           Expanded(
-                            child: CachedNetworkImage(
-                              imageUrl: fc.featuredProducts[index].image,
-                              fit: BoxFit.cover,
-                              placeholder: (context, url) => const Loader(),
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
+                            child: SizedBox(
+                              width: 200,
+                              child: CachedNetworkImage(
+                                imageUrl: fc.featuredProducts[index].image,
+                                fit: BoxFit.cover,
+                                placeholder: (context, url) => const Loader(),
+                                errorWidget: (context, url, error) =>
+                                    const Icon(Icons.error),
+                              ),
                             ),
                           ),
                           Text(fc.featuredProducts[index].name),

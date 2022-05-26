@@ -14,7 +14,7 @@ class ProductDetailController extends GetxController {
           categoryId: 0)
       .obs;
   var isloading = true.obs;
-  Future singleProductDetailById(int id) async {
+  Future getsingleProductDetailById(int id) async {
     var data = await RemoteService.fetchsingleProductDetailById(id);
     if (data != null) {
       singleProduct.value = data;

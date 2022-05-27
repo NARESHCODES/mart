@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:mart/controller/best_deal_controller.dart';
+import 'package:mart/controller/cart.dart';
 import 'package:mart/controller/featured_product_controller.dart';
 import 'package:mart/controller/product_detail.dart';
 import 'package:mart/controller/slide.dart';
@@ -21,6 +22,7 @@ class HomeView extends StatelessWidget {
     var bc = Get.find<BestDealController>();
     var fc = Get.find<FeaturedProductController>();
     var pdc = Get.find<ProductDetailController>();
+    var cc = Get.find<CartController>();
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -35,6 +37,7 @@ class HomeView extends StatelessWidget {
               const Text("5"),
               IconButton(
                   onPressed: () {
+                    cc.getCartItems(2);
                     Get.to(() => const CartView());
                   },
                   icon: const Icon(Icons.shopping_cart),

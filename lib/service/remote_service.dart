@@ -83,7 +83,10 @@ class RemoteService {
             "Accept": "application/json"
           },
           body: jsonEncode(data));
-      print(response.statusCode);
+      if (response.statusCode == 201) {
+        Get.snackbar("Success", "Items added to cart",
+            snackPosition: SnackPosition.TOP);
+      }
     } catch (e) {
       Get.snackbar("error", e.toString());
     }
@@ -97,6 +100,21 @@ class RemoteService {
       if (response.statusCode == 200) {
         var jsonString = response.body;
         return cartModelFromJson(jsonString);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      Get.snackbar("Error", e.toString());
+    }
+  }
+
+  //delete from cart
+  static Future deleteFromCart(int id) async {
+    try {
+      var response = await client.delete(Uri.parse("$baseURL/cart/$id"));
+      if (response.statusCode == 200) {
+        Get.snackbar("Success", "Item has been deleted",
+            snackPosition: SnackPosition.TOP);
       } else {
         return null;
       }

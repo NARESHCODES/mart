@@ -184,34 +184,6 @@
       "qty": 1,
       "amount": 120,
       "id": 14
-    },
-    {
-      "userId": 2,
-      "bestProductsId": 1,
-      "qty": 1,
-      "amount": 100,
-      "id": 15
-    },
-    {
-      "userId": 2,
-      "bestProductsId": 3,
-      "qty": 6,
-      "amount": 720,
-      "id": 16
-    },
-    {
-      "userId": 2,
-      "bestProductsId": 3,
-      "qty": 1,
-      "amount": 120,
-      "id": 17
-    },
-    {
-      "userId": 2,
-      "bestProductsId": 3,
-      "qty": 1,
-      "amount": 120,
-      "id": 18
     }
   ]
 }

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:mart/controller/product_detail.dart';
+import 'package:mart/util/app_color.dart';
 import 'package:mart/widgets/loader.dart';
 import 'package:readmore/readmore.dart';
 
@@ -84,15 +85,19 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                       },
                       icon: const Icon(
                         Icons.remove_circle_outline,
-                        size: 24,
+                        size: 32,
                       )),
                   Container(
-                      width: 40,
+                      width: 60,
+                      height: 34,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
                           borderRadius: BorderRadius.circular(5)),
-                      child: Text("$qty")),
+                      child: Text(
+                        "$qty",
+                        style: const TextStyle(fontSize: 20),
+                      )),
                   IconButton(
                       onPressed: () {
                         setState(() {
@@ -101,10 +106,17 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                       },
                       icon: const Icon(
                         Icons.add_circle_outline,
-                        size: 24,
+                        size: 32,
                       )),
                   ElevatedButton(
-                      onPressed: () {}, child: const Text("Add to cart"))
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(AppColor.primaryColor)),
+                      onPressed: () {},
+                      child: const Text(
+                        "Add to cart",
+                        style: TextStyle(color: Colors.white),
+                      ))
                 ],
               ),
               //product description

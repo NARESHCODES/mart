@@ -5,6 +5,7 @@ import 'dart:convert';
 import "package:get/get.dart";
 import "package:http/http.dart" as http;
 import 'package:mart/model/best_deal.dart';
+import 'package:mart/model/cart.dart';
 import 'package:mart/model/featured_product.dart';
 import 'package:mart/model/product_detail.dart';
 import "package:mart/model/slide.dart";
@@ -85,6 +86,22 @@ class RemoteService {
       print(response.statusCode);
     } catch (e) {
       Get.snackbar("error", e.toString());
+    }
+  }
+
+  //fetch cartitems by userid
+  static Future<List<CartModel>?> fetchCartItems(int id) async {
+    try {
+      var response = await client
+          .get(Uri.parse("$baseURL/userId=$id&_expand=bestProducts"));
+      if (response.statusCode == 200) {
+        var jsonString = response.body;
+        return cartModelFromJson(jsonString);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      Get.snackbar("Error", e.toString());
     }
   }
 }

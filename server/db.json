@@ -165,11 +165,25 @@
   ],
   "cart": [
     {
-      "userId": 1,
-      "itemId": 1,
-      "qty": 5,
-      "amount": 500,
-      "id": 1
+      "userId": 2,
+      "bestProductsId": 3,
+      "qty": 1,
+      "amount": 120,
+      "id": 12
+    },
+    {
+      "userId": 2,
+      "bestProductsId": 1,
+      "qty": 1,
+      "amount": 100,
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "bestProductsId": 2,
+      "qty": 1,
+      "amount": 120,
+      "id": 14
     }
   ]
 }

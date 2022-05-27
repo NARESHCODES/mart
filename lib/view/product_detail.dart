@@ -118,8 +118,8 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                               MaterialStateProperty.all(AppColor.primaryColor)),
                       onPressed: () {
                         Map data = {
-                          "userId": 1,
-                          "itemId": pdc.singleProduct.value.id,
+                          "userId": 2,
+                          "bestProductsId": pdc.singleProduct.value.id,
                           "qty": qty,
                           "amount": pdc.singleProduct.value.sellingPrice * qty,
                         };

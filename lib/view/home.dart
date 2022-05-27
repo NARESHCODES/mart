@@ -6,6 +6,7 @@ import 'package:mart/controller/featured_product_controller.dart';
 import 'package:mart/controller/product_detail.dart';
 import 'package:mart/controller/slide.dart';
 import 'package:mart/util/app_color.dart';
+import 'package:mart/view/cart.dart';
 import 'package:mart/view/product_detail.dart';
 import 'package:mart/widgets/custom_list_tile.dart';
 import 'package:mart/widgets/loader.dart';
@@ -33,7 +34,9 @@ class HomeView extends StatelessWidget {
             children: [
               const Text("5"),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(() => const CartView());
+                  },
                   icon: const Icon(Icons.shopping_cart),
                   color: AppColor.iconColor)
             ],

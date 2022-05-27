@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:mart/controller/best_deal_controller.dart';
+import 'package:mart/controller/cart.dart';
 import 'package:mart/controller/featured_product_controller.dart';
 import 'package:mart/controller/product_detail.dart';
 import 'package:mart/controller/slide.dart';
@@ -13,5 +14,6 @@ class ControllerBinding extends Bindings {
     Get.put(BestDealController());
     Get.put(FeaturedProductController());
     Get.put(ProductDetailController());
+    Get.put(CartController());
   }
 }

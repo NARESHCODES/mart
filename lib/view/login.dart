@@ -20,7 +20,7 @@ class LoginView extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       "Skip Now",
-                      style: TextStyle(color: AppColor.buttonColor),
+                      style: TextStyle(color: AppColor.iconColor),
                     ))
               ],
             ),
@@ -71,6 +71,19 @@ class LoginView extends StatelessWidget {
                               border: InputBorder.none),
                         ),
                       ),
+
+                      const VGap(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            "Forgotten Password?",
+                            style: TextStyle(
+                              color: AppColor.linkTextColor,
+                            ),
+                          )
+                        ],
+                      ),
                       const VGap(),
                       SizedBox(
                           width: 100,
@@ -82,7 +95,19 @@ class LoginView extends StatelessWidget {
                                     AppColor.buttonTextColor)),
                             onPressed: () {},
                             child: const Text("Login"),
-                          ))
+                          )),
+                      const VGap(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Create a new account?",
+                            style: TextStyle(
+                                color: AppColor.linkTextColor,
+                                decoration: TextDecoration.underline),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),

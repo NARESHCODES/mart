@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:mart/controller/product_detail.dart';
+import 'package:mart/service/remote_service.dart';
 import 'package:mart/util/app_color.dart';
 import 'package:mart/widgets/loader.dart';
 import 'package:readmore/readmore.dart';
@@ -108,11 +109,22 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                         Icons.add_circle_outline,
                         size: 32,
                       )),
+                  const SizedBox(
+                    width: 80,
+                  ),
                   ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(AppColor.primaryColor)),
-                      onPressed: () {},
+                      onPressed: () {
+                        Map data = {
+                          "userId": 1,
+                          "itemId": pdc.singleProduct.value.id,
+                          "qty": qty,
+                          "amount": pdc.singleProduct.value.sellingPrice * qty,
+                        };
+                        RemoteService.addToCart(data);
+                      },
                       child: const Text(
                         "Add to cart",
                         style: TextStyle(color: Colors.white),

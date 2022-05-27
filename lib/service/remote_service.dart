@@ -1,5 +1,7 @@
 // ignore_for_file: body_might_complete_normally_nullable
 
+import 'dart:convert';
+
 import "package:get/get.dart";
 import "package:http/http.dart" as http;
 import 'package:mart/model/best_deal.dart';
@@ -74,10 +76,12 @@ class RemoteService {
   //Add to cart
   static Future addToCart(Map data) async {
     try {
-      var response = await client.post(Uri.parse("$baseURL/cart"), headers: {
-        "Content-type": "application/json",
-        "Accept": "application/json"
-      });
+      var response = await client.post(Uri.parse("$baseURL/cart"),
+          headers: {
+            "Content-type": "application/json",
+            "Accept": "application/json"
+          },
+          body: jsonEncode(data));
       print(response.statusCode);
     } catch (e) {
       Get.snackbar("error", e.toString());

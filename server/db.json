@@ -1,156 +1,175 @@
 {
-    "users":[
-        {
-            "id":1,
-            "name": "Naresh Chaudhary",
-            "email":"nareshcodes@gmail.com",
-            "password":"dharan123"
-        }
-    ],
-    "slides" : ["https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063__340.jpg",
-        "https://cdn.pixabay.com/photo/2015/05/04/10/16/vegetables-752153__340.jpg",
-        "https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__340.jpg",
-        "https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062__340.jpg"
-],
-"categories":[
-    {"id":1,
-    "name":"momo"
+  "users": [
+    {
+      "id": 1,
+      "name": "Naresh Chaudhary",
+      "email": "nareshcodes@gmail.com",
+      "password": "dharan123"
     },
     {
-    "id":2,
-    "name": "Thuppa"
-    },
-    {
-    "id":3,
-    "name": "Chowmein"
+      "id": 2,
+      "name": "Test User",
+      "email": "testuser@gmail.com",
+      "password": "testuser"
     }
-],
-"bestProducts":[
+  ],
+  "slides": [
+    "https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063__340.jpg",
+    "https://cdn.pixabay.com/photo/2015/05/04/10/16/vegetables-752153__340.jpg",
+    "https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__340.jpg",
+    "https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062__340.jpg"
+  ],
+  "categories": [
     {
-        "id":1,
-        "name":"Chicken momo",
-        "price":120,
-        "discount_percent":20,
-        "selling_price":100,
-        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Momo_nepal.jpg/800px-Momo_nepal.jpg",
-        "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-        "categoryId":1
+      "id": 1,
+      "name": "momo"
     },
-{
-    "id":2,
-    "name":"Mutton momo",
-    "price":120,
-    "discount_percent":25,
-    "selling_price":120,
-    "image":"https://cdn.pixabay.com/photo/2016/03/28/10/00/food-1285310_960_720.jpg",
-    "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-    "categoryId":1
-},
-{
-    "id":3,
-    "name":"Chicken Pizza",
-    "price":120,
-    "discount_percent":10,
-    "selling_price":120,
-    "image":"https://cdn.pixabay.com/photo/2021/01/24/12/47/food-5945070__340.jpg",
-    "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-    "categoryId":3
-}
-],
-"featuredProducts":[
     {
-        "id":1,
-        "name":"Chicken momo",
-        "price":120,
-        "discount_percent":20,
-        "selling_price":100,
-        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Momo_nepal.jpg/800px-Momo_nepal.jpg",
-        "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-        "categoryId":1
+      "id": 2,
+      "name": "Thuppa"
     },
-{
-    "id":2,
-    "name":"Mutton momo",
-    "price":120,
-    "discount_percent":0,
-    "selling_price":120,
-    "image":"https://cdn.pixabay.com/photo/2016/03/28/10/00/food-1285310_960_720.jpg",
-    "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-    "categoryId":1
-},
-{
-    "id":3,
-    "name":"Chicken Pizza",
-    "price":120,
-    "discount_percent":10,
-    "selling_price":120,
-    "image":"https://cdn.pixabay.com/photo/2021/01/24/12/47/food-5945070__340.jpg",
-    "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-    "categoryId":3
-},
-{
-    "id":4,
-    "name":"Chicken Chowmein",
-    "price":120,
-    "discount_percent":0,
-    "selling_price":120,
-    "image":"https://cdn.pixabay.com/photo/2019/05/31/01/53/chowmein-4241265__480.jpg",
-    "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-    "categoryId":3
-}
-],
-
-"allProducts":[
     {
-        "id":1,
-        "name":"Chicken momo",
-        "price":120,
-        "discount_percent":20,
-        "selling_price":100,
-        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Momo_nepal.jpg/800px-Momo_nepal.jpg",
-        "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-        "categoryId":1
+      "id": 3,
+      "name": "Chowmein"
     },
-{
-    "id":2,
-    "name":"Mutton momo",
-    "price":120,
-    "discount_percent":0,
-    "selling_price":120,
-    "image":"https://cdn.pixabay.com/photo/2016/03/28/10/00/food-1285310_960_720.jpg",
-    "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-    "categoryId":1
-},
-{
-    "id":3,
-    "name":"Chicken Pizza",
-    "price":120,
-    "discount_percent":10,
-    "selling_price":120,
-    "image":"https://cdn.pixabay.com/photo/2021/01/24/12/47/food-5945070__340.jpg",
-    "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-    "categoryId":3
-},
-{
-    "id":4,
-    "name":"Chicken Chowmein",
-    "price":120,
-    "discount_percent":0,
-    "selling_price":120,
-    "image":"https://cdn.pixabay.com/photo/2019/05/31/01/53/chowmein-4241265__480.jpg",
-    "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-    "categoryId":3
-},
-{
-    "id":5,
-    "name":"mutton pizza",
-    "price":250,
-    "discount_percent":8,
-    "selling_price":120,
-    "image":"https://cdn.pixabay.com/photo/2018/03/04/20/05/pizza-3199081__340.jpg",
-    "description":"Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
-    "categoryId":3
-}
-],
-"cart":[]
+    {
+      "id": 4,
+      "name": "Pizza"
+    }
+  ],
+  "bestProducts": [
+    {
+      "id": 1,
+      "name": "Chicken momo",
+      "price": 120,
+      "discount_percent": 20,
+      "selling_price": 100,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Momo_nepal.jpg/800px-Momo_nepal.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Mutton momo",
+      "price": 120,
+      "discount_percent": 25,
+      "selling_price": 120,
+      "image": "https://cdn.pixabay.com/photo/2016/03/28/10/00/food-1285310_960_720.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Chicken Pizza",
+      "price": 120,
+      "discount_percent": 10,
+      "selling_price": 120,
+      "image": "https://cdn.pixabay.com/photo/2021/01/24/12/47/food-5945070__340.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 3
+    }
+  ],
+  "featuredProducts": [
+    {
+      "id": 1,
+      "name": "Chicken momo",
+      "price": 120,
+      "discount_percent": 20,
+      "selling_price": 100,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Momo_nepal.jpg/800px-Momo_nepal.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Mutton momo",
+      "price": 120,
+      "discount_percent": 0,
+      "selling_price": 120,
+      "image": "https://cdn.pixabay.com/photo/2016/03/28/10/00/food-1285310_960_720.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Chicken Pizza",
+      "price": 120,
+      "discount_percent": 10,
+      "selling_price": 120,
+      "image": "https://cdn.pixabay.com/photo/2021/01/24/12/47/food-5945070__340.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 4
+    },
+    {
+      "id": 4,
+      "name": "Chicken Chowmein",
+      "price": 120,
+      "discount_percent": 0,
+      "selling_price": 120,
+      "image": "https://cdn.pixabay.com/photo/2019/05/31/01/53/chowmein-4241265__480.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 3
+    }
+  ],
+  "allProducts": [
+    {
+      "id": 1,
+      "name": "Chicken momo",
+      "price": 120,
+      "discount_percent": 20,
+      "selling_price": 100,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Momo_nepal.jpg/800px-Momo_nepal.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Mutton momo",
+      "price": 120,
+      "discount_percent": 0,
+      "selling_price": 120,
+      "image": "https://cdn.pixabay.com/photo/2016/03/28/10/00/food-1285310_960_720.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Chicken Pizza",
+      "price": 120,
+      "discount_percent": 10,
+      "selling_price": 120,
+      "image": "https://cdn.pixabay.com/photo/2021/01/24/12/47/food-5945070__340.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 4
+    },
+    {
+      "id": 4,
+      "name": "Chicken Chowmein",
+      "price": 120,
+      "discount_percent": 0,
+      "selling_price": 120,
+      "image": "https://cdn.pixabay.com/photo/2019/05/31/01/53/chowmein-4241265__480.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 3
+    },
+    {
+      "id": 5,
+      "name": "mutton pizza",
+      "price": 250,
+      "discount_percent": 8,
+      "selling_price": 120,
+      "image": "https://cdn.pixabay.com/photo/2018/03/04/20/05/pizza-3199081__340.jpg",
+      "description": "Craving for momos, but too scared to step out? Then we have got you a quick and easy way to satiate your love for momos at the comfort of your home. There's nothing more dleicious than a plate full of momos, but making it at home does some seem like a task. So, to simplify the process of making momos at home. Here are an easy step by step recipe which you can make at home. A popular street food among the youngsters these days, momos are undoubtedly one of the easy snack recipes that you can make at home. The word ‘momos’ itself can make anyone’s mouth water and comes from the Chinese word ‘momo’ which means ‘steamed bread'.",
+      "categoryId": 4
+    }
+  ],
+  "cart": [
+    {
+      "userId": 1,
+      "itemId": 1,
+      "qty": 5,
+      "amount": 500,
+      "id": 1
+    }
+  ]
 }

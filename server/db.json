@@ -1,4 +1,12 @@
 {
+    "users":[
+        {
+            "id":1,
+            "name": "Naresh Chaudhary",
+            "email":"nareshcodes@gmail.com",
+            "password":"dharan123"
+        }
+    ],
     "slides" : ["https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063__340.jpg",
         "https://cdn.pixabay.com/photo/2015/05/04/10/16/vegetables-752153__340.jpg",
         "https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032__340.jpg",

@@ -13,10 +13,10 @@ class ProductDetailView extends StatefulWidget {
 }
 
 class _ProductDetailViewState extends State<ProductDetailView> {
+  int qty = 1;
   @override
   Widget build(BuildContext context) {
     var pdc = Get.find<ProductDetailController>();
-    int qty = 1;
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -74,12 +74,13 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                 children: [
                   IconButton(
                       onPressed: () {
-                        if (qty <= 1) {
-                          qty = 1;
-                        } else {
-                          qty++;
-                        }
-                        setState(() {});
+                        setState(() {
+                          if (qty <= 1) {
+                            qty = 1;
+                          } else {
+                            qty--;
+                          }
+                        });
                       },
                       icon: const Icon(
                         Icons.remove_circle_outline,
@@ -94,8 +95,9 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                       child: Text("$qty")),
                   IconButton(
                       onPressed: () {
-                        qty++;
-                        setState(() {});
+                        setState(() {
+                          qty++;
+                        });
                       },
                       icon: const Icon(
                         Icons.add_circle_outline,

@@ -70,4 +70,17 @@ class RemoteService {
       Get.snackbar("Error", e.toString());
     }
   }
+
+  //Add to cart
+  static Future addToCart(Map data) async {
+    try {
+      var response = await client.post(Uri.parse("$baseURL/cart"), headers: {
+        "Content-type": "application/json",
+        "Accept": "application/json"
+      });
+      print(response.statusCode);
+    } catch (e) {
+      Get.snackbar("error", e.toString());
+    }
+  }
 }

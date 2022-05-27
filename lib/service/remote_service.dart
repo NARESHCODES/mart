@@ -12,7 +12,7 @@ import "package:mart/model/slide.dart";
 
 class RemoteService {
   static var client = http.Client();
-  static String baseURL = "http://192.168.0.123:3000";
+  static String baseURL = "http://192.168.0.4:3000";
 
   static Future<List<String>?> fetchSlides() async {
     try {

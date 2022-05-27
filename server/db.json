@@ -166,17 +166,17 @@
   "cart": [
     {
       "userId": 2,
-      "bestProductsId": 3,
+      "bestProductsId": 1,
       "qty": 1,
-      "amount": 120,
-      "id": 12
+      "amount": 100,
+      "id": 1
     },
     {
       "userId": 2,
       "bestProductsId": 2,
       "qty": 1,
       "amount": 120,
-      "id": 14
+      "id": 2
     }
   ]
 }

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mart/util/app_color.dart';
 import 'package:mart/util/app_size.dart';
+import 'package:mart/view/home.dart';
 import 'package:mart/widgets/verticalgap.dart';
 
 class LoginView extends StatelessWidget {
@@ -16,8 +17,10 @@ class LoginView extends StatelessWidget {
               backgroundColor: Colors.transparent,
               elevation: 0,
               actions: [
-                TextButton(
-                    onPressed: () {},
+                MaterialButton(
+                    onPressed: () {
+                      Get.off(() => const HomeView());
+                    },
                     child: Text(
                       "Skip Now",
                       style: TextStyle(color: AppColor.iconColor),

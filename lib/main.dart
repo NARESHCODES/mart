@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       initialBinding: ControllerBinding(),
-      home: const LoginView(),
+      home: const SplashView(),
     );
   }
 }

@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mart/view/login.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -10,6 +11,16 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    // ignore: todo
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(const Duration(seconds: 5), () {
+      Get.off(() => const LoginView());
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -173,13 +173,6 @@
     },
     {
       "userId": 2,
-      "bestProductsId": 1,
-      "qty": 1,
-      "amount": 100,
-      "id": 13
-    },
-    {
-      "userId": 2,
       "bestProductsId": 2,
       "qty": 1,
       "amount": 120,

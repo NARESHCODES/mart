@@ -86,7 +86,8 @@ class LoginView extends StatelessWidget {
                       ),
                       const VGap(),
                       SizedBox(
-                          width: 100,
+                          width: Get.size.width,
+                          height: 50,
                           child: ElevatedButton(
                             style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(
@@ -94,7 +95,10 @@ class LoginView extends StatelessWidget {
                                 foregroundColor: MaterialStateProperty.all(
                                     AppColor.buttonTextColor)),
                             onPressed: () {},
-                            child: const Text("Login"),
+                            child: const Text(
+                              "Login",
+                              style: TextStyle(fontSize: 18),
+                            ),
                           )),
                       const VGap(),
                       Row(

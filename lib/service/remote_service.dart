@@ -10,6 +10,7 @@ import 'package:mart/model/featured_product.dart';
 import 'package:mart/model/product_detail.dart';
 import "package:mart/model/slide.dart";
 import 'package:mart/view/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RemoteService {
   static var client = http.Client();
@@ -127,10 +128,19 @@ class RemoteService {
   //login check user auth
   static Future login(String email, String password) async {
     try {
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+
       var response = await client
           .get(Uri.parse("$baseURL/users?email=$email&password=$password"));
       var jsonList = jsonDecode(response.body);
       if (jsonList.length > 0) {
+        var id = preferences.setString("id", jsonList[0]["id"].toString());
+        var name =
+            preferences.setString("name", jsonList[0]["name"].toString());
+        var email =
+            preferences.setString("email", jsonList[0]["email"].toString());
+        var password = preferences.setString(
+            "password", jsonList[0]["password"].toString());
         Get.off(() => const HomeView());
       } else {
         Get.snackbar("Error", "Invalid username or password! Try again.");

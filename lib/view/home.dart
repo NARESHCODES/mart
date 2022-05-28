@@ -8,10 +8,12 @@ import 'package:mart/controller/product_detail.dart';
 import 'package:mart/controller/slide.dart';
 import 'package:mart/util/app_color.dart';
 import 'package:mart/view/cart.dart';
+import 'package:mart/view/login.dart';
 import 'package:mart/view/product_detail.dart';
 import 'package:mart/widgets/custom_list_tile.dart';
 import 'package:mart/widgets/loader.dart';
 import 'package:mart/widgets/slide.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -28,6 +30,17 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent.withOpacity(0),
         elevation: 0,
+        leading: IconButton(
+            onPressed: () async {
+              SharedPreferences preferences =
+                  await SharedPreferences.getInstance();
+              preferences.remove("id");
+              preferences.remove("name");
+              preferences.remove("email");
+              preferences.remove("password");
+              Get.off(() => const LoginView());
+            },
+            icon: const Icon(Icons.exit_to_app_outlined)),
         titleTextStyle: const TextStyle(fontSize: 30, color: Colors.black),
         title: Container(
             margin: const EdgeInsets.only(left: 45.0),

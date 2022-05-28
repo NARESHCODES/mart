@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:mart/controller/cart.dart';
 import 'package:mart/service/remote_service.dart';
+import 'package:mart/util/app_color.dart';
 import 'package:mart/widgets/loader.dart';
 
 class CartView extends StatelessWidget {
@@ -13,6 +14,38 @@ class CartView extends StatelessWidget {
     var cc = Get.find<CartController>();
     return SafeArea(
         child: Scaffold(
+            bottomNavigationBar: cc.products.isEmpty
+                ? const SizedBox()
+                : Container(
+                    width: Get.size.width,
+                    height: 50,
+                    color: AppColor.textFieldBgColor,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const SizedBox(
+                            child: Text(
+                              "Total: Rs.250",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                          SizedBox(
+                            child: ElevatedButton(
+                                style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                        AppColor.buttonColor),
+                                    foregroundColor: MaterialStateProperty.all(
+                                        AppColor.buttonTextColor)),
+                                onPressed: () {},
+                                child: const Text("Procced")),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
             appBar: AppBar(
               title: const Text("Cart"),
             ),

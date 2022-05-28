@@ -9,6 +9,7 @@ import 'package:mart/model/cart.dart';
 import 'package:mart/model/featured_product.dart';
 import 'package:mart/model/product_detail.dart';
 import "package:mart/model/slide.dart";
+import 'package:mart/view/home.dart';
 
 class RemoteService {
   static var client = http.Client();
@@ -117,6 +118,22 @@ class RemoteService {
             snackPosition: SnackPosition.TOP);
       } else {
         return null;
+      }
+    } catch (e) {
+      Get.snackbar("Error", e.toString());
+    }
+  }
+
+  //login check user auth
+  static Future login(String email, String password) async {
+    try {
+      var response = await client
+          .get(Uri.parse("$baseURL/users?email=$email&password=$password"));
+      var jsonList = jsonDecode(response.body);
+      if (jsonList.length > 0) {
+        Get.off(() => const HomeView());
+      } else {
+        Get.snackbar("Error", "Invalid username or password! Try again.");
       }
     } catch (e) {
       Get.snackbar("Error", e.toString());

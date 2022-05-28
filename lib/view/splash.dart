@@ -11,14 +11,18 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+  checkAuth() {
+    Future.delayed(const Duration(seconds: 5), () {
+      Get.off(() => const LoginView());
+    });
+  }
+
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    Future.delayed(const Duration(seconds: 5), () {
-      Get.off(() => const LoginView());
-    });
+    checkAuth();
   }
 
   @override

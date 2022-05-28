@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
+import 'package:mart/controller/cart.dart';
 import 'package:mart/controller/product_detail.dart';
 import 'package:mart/service/remote_service.dart';
 import 'package:mart/util/app_color.dart';
+import 'package:mart/view/cart.dart';
 import 'package:mart/widgets/loader.dart';
 import 'package:readmore/readmore.dart';
 
@@ -19,6 +21,7 @@ class _ProductDetailViewState extends State<ProductDetailView> {
   @override
   Widget build(BuildContext context) {
     var pdc = Get.find<ProductDetailController>();
+    var cc = Get.find<CartController>();
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -31,6 +34,22 @@ class _ProductDetailViewState extends State<ProductDetailView> {
               pdc.singleProduct.value.name,
               style: const TextStyle(fontWeight: FontWeight.w600),
             ))),
+        actions: [
+          Obx(() => Stack(
+                children: [
+                  cc.products.isEmpty
+                      ? const SizedBox()
+                      : Text("${cc.products.length}"),
+                  IconButton(
+                      onPressed: () {
+                        cc.getCartItems(2);
+                        Get.to(() => const CartView());
+                      },
+                      icon: const Icon(Icons.shopping_cart),
+                      color: AppColor.iconColor)
+                ],
+              ))
+        ],
       ),
       body: Obx(() {
         if (pdc.isloading.value == true) {
@@ -123,7 +142,8 @@ class _ProductDetailViewState extends State<ProductDetailView> {
                           "qty": qty,
                           "amount": pdc.singleProduct.value.sellingPrice * qty,
                         };
-                        RemoteService.addToCart(data);
+                        RemoteService.addToCart(data)
+                            .whenComplete(() => cc.getCartItems(2));
                       },
                       child: const Text(
                         "Add to cart",

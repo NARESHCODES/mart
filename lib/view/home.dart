@@ -33,18 +33,20 @@ class HomeView extends StatelessWidget {
             margin: const EdgeInsets.only(left: 45.0),
             child: const Center(child: Text("Mart"))),
         actions: [
-          Stack(
-            children: [
-              const Text("5"),
-              IconButton(
-                  onPressed: () {
-                    cc.getCartItems(2);
-                    Get.to(() => const CartView());
-                  },
-                  icon: const Icon(Icons.shopping_cart),
-                  color: AppColor.iconColor)
-            ],
-          )
+          Obx(() => Stack(
+                children: [
+                  cc.products.isEmpty
+                      ? const SizedBox()
+                      : Text("${cc.products.length}"),
+                  IconButton(
+                      onPressed: () {
+                        cc.getCartItems(2);
+                        Get.to(() => const CartView());
+                      },
+                      icon: const Icon(Icons.shopping_cart),
+                      color: AppColor.iconColor)
+                ],
+              ))
         ],
       ),
       body: Obx(() {
